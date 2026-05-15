@@ -2,7 +2,7 @@
 
 # 🎯 EPIC-Bench: A Perception-Centric Benchmark for Fine-Grained Embodied Visual Grounding in Vision-Language Models
 
-[![arXiv](https://img.shields.io/badge/arXiv-coming_soon-b31b1b.svg)](https://epic-bench.github.io/EPIC-Bench/)
+[![arXiv](https://img.shields.io/badge/arXiv-coming_soon-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://epic-bench.github.io/EPIC-Bench/)
 [![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://huggingface.co/datasets/rxc205/EPIC-Bench)
 [![Evaluation Toolkit](https://img.shields.io/badge/⚙️-Evaluation_Toolkit-6366f1.svg)](#-epic-bench-evaluation-toolkit)
@@ -218,7 +218,7 @@ Please refer to the [EPIC-Bench Homepage](https://epic-bench.github.io/EPIC-Benc
 
 ## 📜 License
 
-Please add an explicit `LICENSE` file before open-sourcing. If EPIC-Bench annotations or images have redistribution constraints, publish them separately (e.g., Hugging Face / ModelScope) and keep this repo code-only + small examples.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgements
 
