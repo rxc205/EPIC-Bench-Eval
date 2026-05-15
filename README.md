@@ -6,7 +6,7 @@
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://epic-bench.github.io/EPIC-Bench/)
 [![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://huggingface.co/datasets/rxc205/EPIC-Bench)
 [![Evaluation Toolkit](https://img.shields.io/badge/⚙️-Evaluation_Toolkit-6366f1.svg)](#-epic-bench-evaluation-toolkit)
-[![License](https://img.shields.io/badge/License-TBD-lightgrey.svg)](#-license)
+[![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](LICENSE)
 
 [**Homepage**](https://epic-bench.github.io/EPIC-Bench/) | [**Paper**](https://epic-bench.github.io/EPIC-Bench/) | [**Dataset**](https://huggingface.co/datasets/rxc205/EPIC-Bench) | [**Leaderboard**](https://epic-bench.github.io/EPIC-Bench/#leaderboard-section)
 
