@@ -4,7 +4,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-coming_soon-b31b1b.svg)](https://epic-bench.github.io/EPIC-Bench/)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://epic-bench.github.io/EPIC-Bench/)
-[![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://epic-bench.github.io/EPIC-Bench/)
+[![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://huggingface.co/datasets/rxc205/EPIC-Bench)
 [![Evaluation Toolkit](https://img.shields.io/badge/⚙️-Evaluation_Toolkit-6366f1.svg)](#-epic-bench-evaluation-toolkit)
 [![License](https://img.shields.io/badge/License-TBD-lightgrey.svg)](#-license)
 
@@ -39,8 +39,8 @@ The goal is to measure whether models can reliably perceive the critical **Visua
 
 ## 📰 News
 
-- [2026.5.15] 🚀 Huggingface and ModelScope Dataset and evaluation code are available!
-- [2026.5.15] 🚀 We released the ArXiv paper.
+- [2026.5.15] 🚀 Huggingface and ModelScope Dataset are available!
+- [2026.5.15] 🚀 We released the ArXiv paper and Evaluation Code!
 
 ## 📋 Todo
 
@@ -79,6 +79,7 @@ Suggested dependencies (reference; choose what matches your model stack):
 | Qwen3.5 | `pip install vllm==0.17 ms-swift qwen-vl-utils transformers accelerate` |
 | Step models | `pip install onnxruntime-gpu tokenizers openai-whisper funasr vllm==0.15.1`<br>`git clone https://github.com/modelscope/ms-swift.git`<br>`cd ms-swift`<br>`pip install -e .` |
 | glm4.6 | `pip install uv`<br>`uv pip install 'ms-swift' --torch-backend=auto`<br>`pip install vllm==0.15.1 transformers==5.2.0` |
+| API | `cd lmms-eval`<br>`pip install -e .` |
 
 For the visualization tool:
 
