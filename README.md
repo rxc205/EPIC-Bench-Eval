@@ -197,7 +197,7 @@ bash scripts/visualization.sh
 ```
 
 
-## 🏆 Leaderboard and data examples
+## 🏆 Leaderboard and Benchmark
 
 Please refer to the [EPIC-Bench Homepage](https://epic-bench.github.io/EPIC-Bench/) for:
 
