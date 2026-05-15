@@ -39,8 +39,8 @@ The goal is to measure whether models can reliably perceive the critical **Visua
 
 ## 📰 News
 
-- [2026.5.10] 🚀 Huggingface and ModelScope Dataset and evaluation code are available!
-- [2026.5.10] 🚀 We released the ArXiv paper.
+- [2026.5.15] 🚀 Huggingface and ModelScope Dataset and evaluation code are available!
+- [2026.5.15] 🚀 We released the ArXiv paper.
 
 ## 📋 Todo
 
