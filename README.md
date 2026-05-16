@@ -39,12 +39,13 @@ The goal is to measure whether models can reliably perceive the critical **Visua
 
 ## 📰 News
 
-- [2026.5.15] 🚀 Huggingface and ModelScope Dataset are available!
-- [2026.5.15] 🚀 We released the ArXiv paper and Evaluation Code!
+- [2026.5.15] 🚀 [HuggingFace](https://huggingface.co/datasets/rxc205/EPIC-Bench) and [ModelScope](https://www.modelscope.cn/datasets/macarich/EPIC-Bench) Dataset are available!
+- [2026.5.15] 🚀 [Project Page](https://epic-bench.github.io/EPIC-Bench/) and [Evaluation Code](https://github.com/rxc205/EPIC-Bench-Eval) are released, the arXiv paper will come soon.
 
 ## 📋 Todo
 
 - [x] Evaluation code for EPIC-Bench
+- [x] The EPIC-Bench datasets
 - [ ] Make the evaluation pipeline compatible with mask outputs
 
 
