@@ -14,27 +14,19 @@
 
 ## 📃 Overview
 
-> This repository is the official benchmark [**evaluation code**](#-epic-bench-evaluation-toolkit) for EPIC-Bench
+> This repository is the official [**evaluation toolkit**](#-epic-bench-evaluation-toolkit) for EPIC-Bench.
 
-**EPIC-Bench** is a **Mask-Grounding-based** benchmark designed to evaluate a VLM’s **Visual Perception** capability in **Embodied Scenarios**.
+**EPIC-Bench** is a **Mask-Grounding-based** benchmark that evaluates VLM **Visual Perception** in **Embodied Scenarios**, covering **3 categories** and **23 task types** — without language shortcut exploitation.
 
 <p align="center">
   <img src="./images/teaser.png" alt="EPIC-Bench teaser" width="100%"/>
 </p>
 
-📚 EPIC-Bench covers **3 High-Level Categories** and **23 Task Types**, following the realistic **Embodied Workflow**:
+Following the realistic **Embodied Workflow**:
 
-- 🎯 **TargetLocalization**: **Pinpoint** the right object in the scene from a natural-language instruction.
-- 🧭 **Navigation**: **Approach** the target step by step by reading key visual cues along the way.
-- 🤲 **Manipulation**: **Operate** on the target through fine-grained, action-oriented **Grounded Perception**.
-
-The goal is to measure whether models can reliably perceive the critical **Visual** information required throughout the **Embodied Process**.
-
-## ✨ Highlights
-
--  **Embodied-Scenario** evaluation of VLM **Visual Perception** capability.
--  Focus on **Visual Grounding / Perception** without language shortcut exploitation.
--  **Diverse** and **Fine-Grained** task design.
+- 🎯 **TargetLocalization**: Pinpoint the target object from a natural-language instruction.
+- 🧭 **Navigation**: Approach the target by reading key visual cues step by step.
+- 🤲 **Manipulation**: Operate on the target via fine-grained, action-oriented grounded perception.
 
 ## 📰 News
 
@@ -48,38 +40,33 @@ The goal is to measure whether models can reliably perceive the critical **Visua
 - [ ] Make the evaluation pipeline compatible with mask outputs
 
 
-# 🧰 EPIC-Bench Evaluation Toolkit
+## 🧰 EPIC-Bench Evaluation Toolkit
 
 This repository provides an end-to-end evaluation pipeline for **EPIC-Bench** on both:
 
-- **Open-Source VLMs** via the **[ms-swift](https://swift.readthedocs.io/zh-cn/latest/)** inference interface
+- **Open-Source VLMs** via **[ms-swift](https://swift.readthedocs.io/zh-cn/latest/)**
 - **Closed-Source / API-Based VLMs** via **[lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval)**
 
-It includes **Dataset Conversion** utilities, **Inference Launchers**, **Response Standardization**, **Scoring**, and a Streamlit-based **Visualization** tool.
+It covers **Dataset Conversion**, **Inference**, **Response Standardization**, **Scoring**, and a Streamlit-based **Visualization** tool.
 
+## 🚀 Evaluation Guide
 
-## 🚀 Evaluation guide
-
-EPIC-Bench evaluation typically consists of the following stages.
-
-### ⚙️ 0) Environment setup
-
-Create a Python environment (example):
+### ⚙️ 0) Environment Setup
 
 ```bash
 conda create -n epicbench python==3.10
 conda activate epicbench
 ```
 
-Suggested dependencies (reference; choose what matches your model stack):
+Suggested dependencies (choose what matches your model stack):
 
 | Model | Environment |
 |------|-------------|
-| General environment (compatible with Qwen2.5-VL/Qwen3-VL/InternVL/LLaVA-VL/Phi-4/gemma/RynnBrain/RoboBrain2/) | `pip install uv`<br>`uv pip install 'ms-swift' --torch-backend=auto`<br>`pip install vllm==0.15.1` |
+| General (Qwen2.5-VL / Qwen3-VL / InternVL / LLaVA-VL / Phi-4 / Gemma / RynnBrain / RoboBrain2) | `pip install uv`<br>`uv pip install 'ms-swift' --torch-backend=auto`<br>`pip install vllm==0.15.1` |
 | Qwen3.5 | `pip install vllm==0.17 ms-swift qwen-vl-utils transformers accelerate` |
-| Step models | `pip install onnxruntime-gpu tokenizers openai-whisper funasr vllm==0.15.1`<br>`git clone https://github.com/modelscope/ms-swift.git`<br>`cd ms-swift`<br>`pip install -e .` |
+| Step models | `pip install onnxruntime-gpu tokenizers openai-whisper funasr vllm==0.15.1`<br>`git clone https://github.com/modelscope/ms-swift.git && cd ms-swift && pip install -e .` |
 | glm4.6 | `pip install uv`<br>`uv pip install 'ms-swift' --torch-backend=auto`<br>`pip install vllm==0.15.1 transformers==5.2.0` |
-| API | `cd lmms-eval`<br>`pip install -e .` |
+| API | `cd lmms-eval && pip install -e .` |
 
 For the visualization tool:
 
@@ -87,19 +74,17 @@ For the visualization tool:
 pip install streamlit pillow numpy pandas pycocotools
 ```
 
-### 📦 1) Data preparation
+### 📦 1) Data Preparation
 
 #### 1.1 Download raw annotations
 
-Download EPIC-Bench raw annotation data (and the referenced images) from the official release page (e.g., Hugging Face / ModelScope) and place them under:
+Download EPIC-Bench annotations (and images) from [HuggingFace](https://huggingface.co/datasets/rxc205/EPIC-Bench) / [ModelScope](https://www.modelscope.cn/datasets/macarich/EPIC-Bench) and place them under:
 
 ```
 dataset/annotation/EPIC_Bench
 ```
 
-#### 1.2 Build ms-swift inference data (swift format)
-
-Generate ms-swift compatible inference JSON files from raw annotations:
+#### 1.2 Build ms-swift inference data
 
 ```bash
 bash scripts/build_swift_data.sh \
@@ -107,29 +92,13 @@ bash scripts/build_swift_data.sh \
   OUT_DIR=dataset/swift_data/EPIC_Bench
 ```
 
-Outputs will be written to:
-
-```
-dataset/swift_data/EPIC_Bench
-```
-
 #### 1.3 Customize prompts (optional)
 
-You can customize prompts and response formats in:
-
-- `tools/data_gen/prompts/`
-- `tools/data_gen/converters/`
-
-For best compatibility with the scoring pipeline, we recommend starting with the default settings in this repo.
+Prompts and response formats can be adjusted in `tools/data_gen/prompts/` and `tools/data_gen/converters/`. We recommend starting from the defaults for best compatibility with the scoring pipeline.
 
 ### 🤖 2) Inference
 
-Run inference using either:
-
-- example per-model scripts under `scripts/infer/<MODEL_FAMILY>/`, or
-- the unified launcher `scripts/infer.sh`
-
-Recommended (unified launcher):
+Run inference with the unified launcher:
 
 ```bash
 bash scripts/infer.sh \
@@ -138,20 +107,13 @@ bash scripts/infer.sh \
   --out outputs/model_response/swift_format
 ```
 
-By default, raw ms-swift outputs are organized under:
+Outputs are saved to `outputs/model_response/swift_format/<model_series>/<model_name>.jsonl`.
 
-```
-outputs/model_response/swift_format/<model_series>/<model_name>.jsonl
-```
+For per-model scripts, see `scripts/infer/<MODEL_FAMILY>/`. For closed-source / API models, see `scripts/infer/api/` (configure API keys via environment variables; **do not commit credentials**).
 
-Closed-source / API inference (optional):
+### 🔄 3) Standardize Responses
 
-- `scripts/infer/api/` contains an example script for `lmms-eval`.
-- You must configure API keys via environment variables and **must not commit credentials** to GitHub.
-
-### 🔄 3) Standardize responses (std_format)
-
-Convert raw ms-swift outputs into EPIC-Bench **standard format** while preserving directory structure:
+Convert raw outputs to EPIC-Bench **standard format**:
 
 ```bash
 bash scripts/format_response.sh \
@@ -159,11 +121,9 @@ bash scripts/format_response.sh \
   --out outputs/model_response/std_format
 ```
 
-If you evaluate a custom model/framework outside this repo, please ensure your outputs follow the **same std-format schema produced by** `tools/formatting/format_response.py`.
+If you use a custom inference framework, ensure its outputs follow the std-format schema produced by `tools/formatting/format_response.py`.
 
 ### 📊 4) Scoring
-
-After obtaining standardized responses, compute detailed scores:
 
 ```bash
 bash scripts/evaluate.sh \
@@ -171,39 +131,19 @@ bash scripts/evaluate.sh \
   --out outputs/scores
 ```
 
-The scorer produces:
-
-- overall / category / type breakdowns
-- per-sample details (unless you pass `--no-details`)
-
-Supported formats:
-
-- **bbox** (most tasks)
-- **point** (FeasiblePath tasks)
-
-Mask-based evaluation is planned (releasing soon).
-
-
-```bash
-bash scripts/evaluate.sh 
-```
+The scorer produces overall / category / task-type breakdowns and per-sample details (pass `--no-details` to skip). Supported formats: **bbox** (most tasks) and **point** (FeasiblePath tasks). Mask-based evaluation is planned.
 
 ### 📈 5) Visualization
-
-Launch the Streamlit visualization tool and default-load results from `outputs/scores`:
 
 ```bash
 bash scripts/visualization.sh
 ```
 
+Launches a Streamlit app and loads results from `outputs/scores` by default.
 
-## 🏆 Leaderboard and Benchmark
+## 🏆 Leaderboard
 
-Please refer to the [EPIC-Bench Homepage](https://epic-bench.github.io/EPIC-Bench/) for:
-
-- Leaderboard
-- Full dataset downloads
-- EPIC-Bench data examples
+Please refer to the [EPIC-Bench Homepage](https://epic-bench.github.io/EPIC-Bench/) for the full leaderboard, dataset downloads, and data examples.
 
 ## 📚 Citation
 
@@ -218,7 +158,7 @@ Please refer to the [EPIC-Bench Homepage](https://epic-bench.github.io/EPIC-Benc
 
 ## 📜 License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 — see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgements
 
