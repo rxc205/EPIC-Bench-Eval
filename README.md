@@ -141,7 +141,7 @@ bash scripts/visualization.sh
 
 Launches a Streamlit app and loads results from `outputs/scores` by default.
 
-## 🏆 Leaderboard
+## 🏆 Leaderboard and Benchmark
 
 Please refer to the [EPIC-Bench Homepage](https://epic-bench.github.io/EPIC-Bench/) for the full leaderboard, dataset downloads, and data examples.
 
