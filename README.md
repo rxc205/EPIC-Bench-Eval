@@ -14,8 +14,7 @@
 
 ## 📃 Overview
 
-> This repo contains the official evaluation code and dataset for the paper
-> **"EPIC-Bench: A Perception-Centric Benchmark for Fine-Grained Embodied Visual Grounding in Vision-Language Models"**
+> This repo contains the official **evaluation code** for EPIC-Bench
 
 **EPIC-Bench** is a **Mask-Grounding-based** benchmark designed to evaluate a VLM’s **Visual Perception** capability in **Embodied Scenarios**.
 
