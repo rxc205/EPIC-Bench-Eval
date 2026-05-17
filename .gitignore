@@ -33,3 +33,5 @@ env/
 *.log
 
 metadata.jsonl
+hf_dataset
+tools/hf_upload
