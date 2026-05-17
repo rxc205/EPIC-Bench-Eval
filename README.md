@@ -14,7 +14,7 @@
 
 ## 📃 Overview
 
-> This repo contains the official **evaluation code** for EPIC-Bench
+> Official benchmark [**evaluation code**](#-epic-bench-evaluation-toolkit) for EPIC-Bench
 
 **EPIC-Bench** is a **Mask-Grounding-based** benchmark designed to evaluate a VLM’s **Visual Perception** capability in **Embodied Scenarios**.
 
