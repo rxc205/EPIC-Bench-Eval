@@ -104,24 +104,6 @@ for f in Manipulation.tar.gz Navigation.tar.gz TargetLocalization.tar.gz; do
 done
 ```
 
-After extraction the directory layout should look like:
-
-```
-dataset/annotation/EPIC_Bench/
-├── Manipulation/
-│   ├── AffordanceRegion/
-│   ├── ContactRelationship/
-│   └── PlacementRegion/
-├── Navigation/
-│   ├── FeasiblePath/
-│   ├── GroundDetection/
-│   └── VisualMatching/
-└── TargetLocalization/
-    ├── BasicAttributes/
-    ├── EmbodiedCompositionalAttributes/
-    └── SpatialRelatedAttributes/
-```
-
 #### 1.2 Build ms-swift inference data
 
 ```bash
