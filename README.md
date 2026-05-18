@@ -72,10 +72,54 @@ pip install streamlit pillow numpy pandas pycocotools
 
 #### 1.1 Download raw annotations
 
-Download EPIC-Bench annotations (and images) from [HuggingFace](https://huggingface.co/datasets/rxc205/EPIC-Bench) / [ModelScope](https://www.modelscope.cn/datasets/macarich/EPIC-Bench) and place them under:
+EPIC-Bench contains ~35,000 small files across three task categories. To work around HuggingFace's per-file rate limit (1,000 API requests / 5 min) and to keep download speed reasonable, the annotations are distributed as **three task-level tarballs** instead of raw folders.
+
+Download the tarballs from [HuggingFace](https://huggingface.co/datasets/rxc205/EPIC-Bench) (or [ModelScope](https://www.modelscope.cn/datasets/macarich/EPIC-Bench)):
+
+| Archive | Size | # Files | Contents |
+|---------|------|---------|----------|
+| `Manipulation.tar.gz`       | 1.70 GB | 7,061   | AffordanceRegion / ContactRelationship / PlacementRegion |
+| `Navigation.tar.gz`         | 2.71 GB | 10,868  | FeasiblePath / GroundDetection / VisualMatching |
+| `TargetLocalization.tar.gz` | 3.34 GB | 17,665  | BasicAttributes / EmbodiedCompositionalAttributes / SpatialRelatedAttributes |
+
+Place them under `dataset/annotation/` and extract:
+
+```bash
+mkdir -p dataset/annotation/EPIC_Bench
+cd dataset/annotation/EPIC_Bench
+
+# Option 1: download via huggingface-cli (recommended; supports resume)
+hf download rxc205/EPIC-Bench \
+    Manipulation.tar.gz Navigation.tar.gz TargetLocalization.tar.gz \
+    --repo-type dataset --local-dir .
+
+# Option 2: direct wget
+wget https://huggingface.co/datasets/rxc205/EPIC-Bench/resolve/main/Manipulation.tar.gz
+wget https://huggingface.co/datasets/rxc205/EPIC-Bench/resolve/main/Navigation.tar.gz
+wget https://huggingface.co/datasets/rxc205/EPIC-Bench/resolve/main/TargetLocalization.tar.gz
+
+# Extract all three (preserves the original folder layout)
+for f in Manipulation.tar.gz Navigation.tar.gz TargetLocalization.tar.gz; do
+    tar -xzf "$f" && rm "$f"
+done
+```
+
+After extraction the directory layout should look like:
 
 ```
-dataset/annotation/EPIC_Bench
+dataset/annotation/EPIC_Bench/
+├── Manipulation/
+│   ├── AffordanceRegion/
+│   ├── ContactRelationship/
+│   └── PlacementRegion/
+├── Navigation/
+│   ├── FeasiblePath/
+│   ├── GroundDetection/
+│   └── VisualMatching/
+└── TargetLocalization/
+    ├── BasicAttributes/
+    ├── EmbodiedCompositionalAttributes/
+    └── SpatialRelatedAttributes/
 ```
 
 #### 1.2 Build ms-swift inference data
