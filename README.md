@@ -2,7 +2,7 @@
 
 # 🎯 EPIC-Bench: A Perception-Centric Benchmark for Fine-Grained Embodied Visual Grounding in Vision-Language Models
 
-[![arXiv](https://img.shields.io/badge/arXiv-coming_soon-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.17070-b31b1b.svg)](https://arxiv.org/abs/2605.17070)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://epic-bench.github.io/EPIC-Bench/)
 [![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://huggingface.co/datasets/rxc205/EPIC-Bench)
 [![Evaluation Toolkit](https://img.shields.io/badge/⚙️-Evaluation_Toolkit-6366f1.svg)](#-epic-bench-evaluation-toolkit)
@@ -175,11 +175,14 @@ Please refer to the [EPIC-Bench Homepage](https://epic-bench.github.io/EPIC-Benc
 ## 📚 Citation
 
 ```BibTeX
-@article{EPIC-Bench,
-  title={EPIC-Bench: A Perception-Centric Benchmark for Fine-Grained Embodied Visual Grounding in Vision-Language Models},
-  author={XXX, XXX, XXX},
-  journal={},
-  year={2026}
+@misc{shan2026epicbenchperceptioncentricbenchmarkfinegrained,
+      title={EPIC-Bench: A Perception-Centric Benchmark for Fine-Grained Embodied Visual Grounding in Vision-Language Models}, 
+      author={Haozhe Shan and Xiancong Ren and Han Dong and Haoyuan Shi and Yingji Zhang and Jiayu Hu and Yi Zhang and Yong Dai and Bin Shen and Lizhen Qu and Zenglin Xu and Xiaozhu Ju},
+      year={2026},
+      eprint={2605.17070},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2605.17070}, 
 }
 ```
 
