@@ -89,15 +89,16 @@ Place them under `dataset/annotation/` and extract:
 mkdir -p dataset/annotation/EPIC_Bench
 cd dataset/annotation/EPIC_Bench
 
-# Option 1: download via huggingface-cli (recommended; supports resume)
+# Option 1: huggingface-cli
 hf download rxc205/EPIC-Bench \
     Manipulation.tar.gz Navigation.tar.gz TargetLocalization.tar.gz \
     --repo-type dataset --local-dir .
 
-# Option 2: direct wget
-wget https://huggingface.co/datasets/rxc205/EPIC-Bench/resolve/main/Manipulation.tar.gz
-wget https://huggingface.co/datasets/rxc205/EPIC-Bench/resolve/main/Navigation.tar.gz
-wget https://huggingface.co/datasets/rxc205/EPIC-Bench/resolve/main/TargetLocalization.tar.gz
+# Option 2: modelscope
+modelscope download \
+  --dataset macarich/EPIC-Bench \
+  --local_dir .
+
 
 # Extract all three (preserves the original folder layout)
 for f in Manipulation.tar.gz Navigation.tar.gz TargetLocalization.tar.gz; do
