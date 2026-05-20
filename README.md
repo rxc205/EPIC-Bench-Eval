@@ -91,7 +91,6 @@ cd dataset/annotation/EPIC_Bench
 
 # Option 1: huggingface-cli
 hf download rxc205/EPIC-Bench \
-    Manipulation.tar.gz Navigation.tar.gz TargetLocalization.tar.gz \
     --repo-type dataset --local-dir .
 
 # Option 2: modelscope
