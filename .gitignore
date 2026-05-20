@@ -4,8 +4,8 @@ examples/
 outputs/
 tmp/
 tools/visualization_cn/
-lmms-eval
-scripts/infer/api
+# lmms-eval
+# scripts/infer/api
 
 
 # Python
@@ -13,7 +13,7 @@ __pycache__/
 *.py[cod]
 *.pyd
 *.so
-*.egg-info/
+# *.egg-info/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/

@@ -1,0 +1,21 @@
+task: feasiblePath_thirdperspective
+dataset_path: "json"
+dataset_kwargs:
+  data_files:
+    - /media/vlm/vlm-model/asset_llm_ckpt/vlm-perception/EPIC-Bench-Eval/examples/swift_data_sample/EPIC_Bench/swift_FeasiblePath_Exo.json
+test_split: train
+output_type: generate_until
+
+metric_list:
+  - metric: score
+    aggregation: !function utils.feasiblePath_thirdperspective_aggregate_score
+    higher_is_better: true
+
+doc_to_visual: !function utils.feasiblePath_thirdperspective_doc_to_visual
+doc_to_text: !function utils.feasiblePath_thirdperspective_doc_to_text
+doc_to_target: !function utils.feasiblePath_thirdperspective_doc_to_answer
+process_results: !function utils.feasiblePath_thirdperspective_process_results_generation
+lmms_eval_specific_kwargs:
+  default:
+    pre_prompt: ""
+    post_prompt: ""
