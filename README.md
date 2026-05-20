@@ -119,13 +119,18 @@ Prompts and response formats can be adjusted in `tools/data_gen/prompts/` and `t
 
 ### 🤖 2) Inference
 
+2.1 Open-source model：
 Run inference with the unified launcher:
-
 ```bash
 bash scripts/infer.sh \
   --model Qwen3_VL \
   --data dataset/swift_data/EPIC_Bench \
   --out outputs/model_response/swift_format
+```
+2.2 Closed-source model：
+Modify the model-version and API-key in the script.
+```bash
+bash scripts/infer/api/infer_api.sh
 ```
 
 Outputs are saved to `outputs/model_response/swift_format/<model_series>/<model_name>.jsonl`.
