@@ -178,6 +178,9 @@ Launches a Streamlit app and loads results from `outputs/scores` by default.
 
 Please refer to the [EPIC-Bench Homepage](https://epic-bench.github.io/EPIC-Bench/) for the full leaderboard, dataset downloads, and data examples.
 
+## 📬 Contact With Us
+- Email: xiancong.ren@x-humanoid.com
+
 ## 📚 Citation
 
 ```BibTeX
