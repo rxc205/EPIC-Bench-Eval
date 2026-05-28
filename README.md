@@ -30,7 +30,8 @@ Following the realistic **Embodied Workflow**:
 
 ## 📰 News
 
-- [2026.5.19] 🎉 Our [arXiv paper](https://arxiv.org/abs/2605.17070) is now available!
+- [2026.5.28] 🎉 Over 1,000 downloads across [HuggingFace](https://huggingface.co/datasets/rxc205/EPIC-Bench) and [ModelScope](https://www.modelscope.cn/datasets/macarich/EPIC-Bench). Thanks for the community’s support!
+- [2026.5.19] 🚀 Our [arXiv paper](https://arxiv.org/abs/2605.17070) is now available!
 - [2026.5.15] 🚀 [HuggingFace](https://huggingface.co/datasets/rxc205/EPIC-Bench) and [ModelScope](https://www.modelscope.cn/datasets/macarich/EPIC-Bench) Dataset are available!
 - [2026.5.15] 🚀 [Project Page](https://epic-bench.github.io/EPIC-Bench/) and [Evaluation Code](https://github.com/rxc205/EPIC-Bench-Eval) are released.
 
